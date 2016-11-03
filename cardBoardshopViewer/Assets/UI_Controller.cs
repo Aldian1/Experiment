@@ -25,7 +25,11 @@ public class UI_Controller : MonoBehaviour {
     {
         foreach (GameObject uiElement in mainUI)
         {
-            uiElement.GetComponent<Image>().CrossFadeAlpha(1, 1, false);
+            if(uiElement.GetComponent<Image>())
+            { uiElement.GetComponent<Image>().CrossFadeAlpha(1, 1, false); }
+            if(uiElement.GetComponent<Text>())
+            { uiElement.GetComponent<Text>().CrossFadeAlpha(1, 1, false); }
+
         }
     }
 }
